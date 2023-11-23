@@ -17,4 +17,3 @@ if __name__ == "__main__":
 	with open('../inputs/day02.input') as f:
 		data = [str(line) for line in f.read().splitlines()]
 		print(main(data))
-
