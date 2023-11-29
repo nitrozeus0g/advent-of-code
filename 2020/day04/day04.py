@@ -23,13 +23,9 @@ def main(data):
         if tmp[0] == 'eyr':
           if int(tmp[1]) < 2020 or int(tmp[1]) > 2030: continue
 
-        # WRONGGGGG maybe idk #########
         if tmp[0] == 'hcl':
-          #print(tmp)
-          if tmp[1][0] != '#' or len(tmp[1]) != 7 or tmp[1][1:].isnumeric() == False: continue
-          if tmp[1][1:]:
-            if not re.match(r'[a-f0-9]{6}', tmp[1][1:]): continue
-          print(re.match(r'[a-f0-9]{6}', tmp[1][1:]))
+          if tmp[1][0] != '#' or len(tmp[1]) != 7: continue
+          if not re.match(r'^[a-f0-9]+$', tmp[1][1:]): continue
 
         if tmp[0] == 'hgt':
           height = tmp[1][:-2]
@@ -47,13 +43,10 @@ def main(data):
 
         if tmp[0] == 'cid': continue
 
-        else:
-          fields.append(j.split(":")[0])
+        else: fields.append(j.split(":")[0])
 
     else:
-      #print(sorted(fields))
-      if sorted(fields) == required_fields:
-        correct += 1
+      if sorted(fields) == required_fields: correct += 1
       fields = []
   return correct
 
