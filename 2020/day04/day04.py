@@ -5,8 +5,8 @@ def main(data):
   required_fields = sorted(required_fields)
   eye_color = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
   correct = 0
-
   fields = []
+
   for i in data:
     if len(i) > 0:
       for j in i.split(" "):
