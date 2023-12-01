@@ -17,4 +17,3 @@ if __name__ == "__main__":
     data = [line for line in f.read().splitlines()]
     for i in data:
       print(main(i))
-
